@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-const int MAX_AGE = 120;
+const int MAX_AGE = 110;
 
 int main() {
     string name;
@@ -14,7 +14,8 @@ int main() {
     cout << "How old are you? ";
     cin >> age;
 
-    cout << "Hello, " << name << "! You are " << age << " years old.";
+    cout << "Hello, " << name << "! You're " << age << " years old.";
+    cout << "This is a simple C++ program." << "\n";
 
     return 0;
 }
