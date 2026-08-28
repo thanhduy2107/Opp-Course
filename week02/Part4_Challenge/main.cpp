@@ -10,7 +10,7 @@ int main()
     cout << "==============================" << "\n\n";
 
     // Student Information
-    string name = "Thanh Duy";
+    string name = "Phan Thanh Duy";
     string school = "HCMUTE";
     string major = "Automotive Engineering";
     int startYear = 2025;
