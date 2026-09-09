@@ -124,6 +124,19 @@ cout << endl;
         cout << endl;
     }
 
+// Đếm số học sinh xuất xắc
+    int excellent = 0;
 
-    return 0;
-}
+    for (int i = 0; i < N; i++) {
+        if (scores[i] >= 9) {
+            excellent++;
+        }
+    }
+
+    cout << endl;
+    cout << "===== 1. EXCELLENT STUDENTS =====" << endl;
+    cout << "Number of excellent students: " << excellent << endl;
+
+
+    
+    
