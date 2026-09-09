@@ -54,4 +54,20 @@ int main()
         }
     }
 
-  
+  // Tính tỷ lệ đỗ
+  int passed = 0;
+    int failed = 0;
+
+    for (int i = 0; i < N; i++) {
+
+        if (scores[i] >= 5) {
+            passed = passed + 1; // Tăng biến đếm số sinh viên đỗ
+        }
+        else {
+            failed = failed + 1; // Tăng biến đếm số sinh viên không đỗ
+        }
+    }
+
+    double passRate = (double)passed / N * 100;// Lấy số người đỗ/tổng số sinh viên*100 để ra tỷ lệ phần trăm
+    cout << "Tỷ lệ đỗ: " << passRate << "%" << endl;
+    
