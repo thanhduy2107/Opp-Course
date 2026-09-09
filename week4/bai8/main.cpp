@@ -15,8 +15,8 @@ int main() {
         y = r; // Khi y = r, nếu r = 0 thì x là BCNN, nếu r != 0 thì tiếp tục vòng lặp
     }
 
-    int gcd = x;
-    int lcm = a * b / gcd;
+    int gcd = x; // GCD (Greatest Common Divisor) là ước chung lớn nhất của hai số a và b, được tìm thấy bằng thuật toán Euclid. Khi vòng lặp kết thúc, x sẽ chứa giá trị GCD.
+    int lcm = a * b / gcd; // BCNN (Least Common Multiple) được tính bằng công thức: BCNN(a, b) = (a * b) / GCD(a, b)
 
     cout << "BCNN = " << lcm;
 
