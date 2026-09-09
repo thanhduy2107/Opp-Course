@@ -38,4 +38,20 @@ int main()
     }
 
 
-    
+    // Bước 4: Kiểm tra PASS / FAIL
+    cout << endl;
+    cout << "===== KẾT QUẢ =====" << endl;
+
+    for (int i = 0; i < N; i++) {
+
+        if (scores[i] >= 5) {
+            cout << "Sinh viên " << i + 1 << ": "
+                 << scores[i] << " -> ĐẠT" << endl;
+        }
+        else {
+            cout << "Sinh viên " << i + 1 << ": "
+                 << scores[i] << " -> KHÔNG ĐẠT" << endl;
+        }
+    }
+
+  
