@@ -14,27 +14,16 @@ int main()
             cout << "Đầu vào không hợp lệ! Vui lòng nhập một số từ 2 đến 20.\n";
         }
     } while (N < 2 || N > 20);
-
-    // Xóa bộ nhớ đệm sau khi nhập số nguyên N
-    cin.ignore();
-     
+    
+    double scores[20]; // Mảng để lưu trữ điểm của sinh viên
     for (int i = 0; i < N; i++) {
-        cout << "===========================================\n";
-        cout << "=====ĐIỂM CỦA SINH VIÊN  =====\n";
-        cout << "===========================================\n";
+        do {
         cout << "Nhập điểm của sinh viên thứ " << i + 1 << ": ";
-        int score;
-        cin >> score;   
-    if ( 0 <= score && score <= 10) {
-        cout << "Điểm của sinh viên " << i + 1 << ": " << score << endl;
-    } else {
-        cout << "Số điểm không hợp lệ! Vui lòng nhập điểm từ 0 đến 10.\n";
-        i--; // Giảm chỉ số i để nhập lại điểm cho sinh viên hiện tại 
-    }
+        cin >> scores[i];   
+        if (scores[i] < 0 || scores[i] > 10) {
+            cout << "Số điểm không hợp lệ! Vui lòng nhập điểm từ 0 đến 10.\n";
+            i--; // Giảm chỉ số i để nhập lại điểm cho sinh viên hiện tại 
+        }
+     } while (scores[i] < 0 || scores[i] > 10);
     
     }
-     
-    return 0;
-}
-     
-    
