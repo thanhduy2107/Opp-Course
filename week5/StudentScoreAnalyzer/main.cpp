@@ -76,3 +76,25 @@ int main()
     cout << "Không đạt : " << không_đạt << " students" << endl;
     cout << "Tỷ lệ đỗ: " << passRate << "%" << endl;
 
+// Tìm sinh viên có điểm cao vào thấp nhất
+ double highest = scores[0];
+    double lowest = scores[0];
+
+    for (int i = 1; i < N; i++) {
+
+        if (scores[i] > highest) {
+            highest = scores[i];
+        }
+
+        if (scores[i] < lowest) {
+            lowest = scores[i];
+        }
+    }
+
+    cout << endl;
+    cout << "===== HIGHEST AND LOWEST =====" << endl;
+
+    cout << "Highest score: " << highest << endl;
+    cout << "Lowest score : " << lowest << endl;
+
+
