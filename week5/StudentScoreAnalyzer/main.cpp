@@ -27,3 +27,15 @@ int main()
      } while (scores[i] < 0 || scores[i] > 10);
     
     }
+
+    
+// Hiển thị danh sách điểm của sinh viên
+    cout << endl;
+    cout << "===== ĐIỂM SINH VIÊN =====" << endl;
+
+    for (int i = 0; i < N; i++) {
+        cout << "Sinh viên " << i + 1 << ": " << scores[i] << endl;
+    }
+
+
+    
