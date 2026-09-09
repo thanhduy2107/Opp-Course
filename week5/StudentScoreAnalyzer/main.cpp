@@ -38,7 +38,7 @@ int main()
     }
 
 
-    // Bước 4: Kiểm tra PASS / FAIL
+    // Kiểm tra PASS / FAIL
     cout << endl;
     cout << "===== KẾT QUẢ =====" << endl;
 
