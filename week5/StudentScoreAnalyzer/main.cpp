@@ -97,4 +97,33 @@ int main()
     cout << "Highest score: " << highest << endl;
     cout << "Lowest score : " << lowest << endl;
 
+cout << endl;
+    cout << "===== CLASSIFICATION =====" << endl;
 
+    for (int i = 0; i < N; i++) {
+
+        cout << "Student " << i + 1 << ": "
+             << scores[i] << " -> ";
+
+        if (scores[i] >= 9) {
+            cout << "Excellent";
+        }
+        else if (scores[i] >= 8) {
+            cout << "Very Good";
+        }
+        else if (scores[i] >= 6.5) {
+            cout << "Good";
+        }
+        else if (scores[i] >= 5) {
+            cout << "Average";
+        }
+        else {
+            cout << "Fail";
+        }
+
+        cout << endl;
+    }
+
+
+    return 0;
+}
