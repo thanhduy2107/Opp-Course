@@ -134,8 +134,38 @@ cout << endl;
     }
 
     cout << endl;
-    cout << "===== 1. EXCELLENT STUDENTS =====" << endl;
+    cout << "===== EXCELLENT STUDENTS =====" << endl;
     cout << "Number of excellent students: " << excellent << endl;
+
+    
+    // Đếm số học sinh trong khoảng điểm
+    double a, b; // biến để lưu trữ khoảng điểm, điểm thập phân
+    int rangeCount = 0;
+
+    cout << endl;
+    cout << "===== SCORE RANGE =====" << endl;
+
+    cout << "Enter minimum score: ";
+    cin >> a;
+
+    cout << "Enter maximum score: ";
+    cin >> b;
+
+    // Nếu người dùng nhập ngược
+    if (a > b) {
+        double temp = a;
+        a = b;
+        b = temp;
+    }
+
+    for (int i = 0; i < N; i++) {
+        if (scores[i] >= a && scores[i] <= b) {
+            rangeCount++;
+        }
+    }
+    cout << "Students in range: " << rangeCount << endl;
+
+
 
 
     
