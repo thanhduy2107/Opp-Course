@@ -240,7 +240,7 @@ double x; // Biến để lưu trữ điểm cần tìm kiếm
     }
 
     // Tần suất xuất hiện của các điểm
-     int frequency = 0;
+     int frequency = 0; // Biến để đếm tần suất xuất hiện của điểm x
 
     cout << endl;
     cout << "===== SCORE FREQUENCY =====" << endl;
@@ -256,3 +256,31 @@ double x; // Biến để lưu trữ điểm cần tìm kiếm
     }
 
     cout << "Score " << x   << " appears " << frequency << " times." << endl;
+
+    
+    // Tìm sinh viên rớt môn đầu tiên
+    bool failFound = false;
+
+    cout << endl;
+    cout << "===== FIRST FAILING STUDENT ====="
+         << endl;
+
+    for (int i = 0; i < N; i++) {
+
+        if (scores[i] < 5) {
+
+            cout << "First failing student:"
+                 << endl;
+
+            cout << "Student " << i + 1
+                 << ": " << scores[i] << endl;
+
+            failFound = true;
+
+            break;
+        }
+    }
+
+    if (!failFound) {
+        cout << "All students pass!" << endl;
+    }
