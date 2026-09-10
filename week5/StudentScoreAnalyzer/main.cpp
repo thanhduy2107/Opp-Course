@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cfloat>
 using namespace std;
 
 int main()
@@ -22,7 +23,7 @@ int main()
         cin >> scores[i];   
         if (scores[i] < 0 || scores[i] > 10) {
             cout << "Số điểm không hợp lệ! Vui lòng nhập điểm từ 0 đến 10.\n";
-            i--; // Giảm chỉ số i để nhập lại điểm cho sinh viên hiện tại 
+             
         }
      } while (scores[i] < 0 || scores[i] > 10);
     
@@ -153,9 +154,9 @@ cout << endl;
 
     // Nếu người dùng nhập ngược
     if (a > b) {
-        double temp = a;
-        a = b;
-        b = temp;
+        double temp = a; // Lưu giá trị của a vào biến tạm thời
+        a = b; // Gán giá trị của b cho a
+        b = temp; // Gán giá trị của biến tạm thời cho b
     }
 
     for (int i = 0; i < N; i++) {
@@ -175,7 +176,7 @@ cout << endl;
     double average = sum / N;
 
     cout << endl;
-    cout << "===== 3. ABOVE AVERAGE =====" << endl;
+    cout << "=====  ABOVE AVERAGE =====" << endl;
     cout << "Average score: " << average << endl;
 
     cout << "Students above average:" << endl;
@@ -186,7 +187,33 @@ cout << endl;
         }
     }
 
+// Tìm sinh viên có điểm cao thứ hai
+ double secondHighest = -1; // Khởi tạo biến secondHighest với giá trị -1 để kiểm tra nếu không có điểm cao thứ hai
+
+    for (int i = 1; i < N; i++) {
+
+        if (scores[i] > highest) { // Nếu điểm hiện tại lớn hơn điểm cao nhất
+            secondHighest = highest; // Cập nhật secondHighest với giá trị của highest trước đó
+            highest = scores[i]; // Cập nhật highest với giá trị điểm hiện tại
+        }
+        else if (scores[i] > secondHighest && scores[i] < highest) {
+            secondHighest = scores[i];
+        }
+    }
+
+    cout << endl;
+    cout << "===== HIGHEST SCORES =====" << endl;
+    cout << "Highest score: " << highest << endl;
+
+    if (secondHighest != -1) {
+        cout << "Second highest score: "
+             << secondHighest << endl;
+    }
+    else {
+        cout << "There is no second different score."
+             << endl;
+    }
 
 
-    
-    
+return 0;
+}
