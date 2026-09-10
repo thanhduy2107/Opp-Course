@@ -284,3 +284,19 @@ double x; // Biến để lưu trữ điểm cần tìm kiếm
     if (!failFound) {
         cout << "All students pass!" << endl;
     }
+
+    
+    // So sánh điểm của hai sinh viên
+    cout << endl;
+    cout << "===== COMPARE ADJACENT STUDENTS ====="
+         << endl;
+
+    for (int i = 1; i < N; i++) {
+
+        if (scores[i] > scores[i - 1]) { // Nếu điểm của sinh viên hiện tại lớn hơn điểm của sinh viên trước đó
+
+            cout << "Student " << i + 1
+                 << " improved compared to Student "
+                 << i << endl;
+        }
+    }
