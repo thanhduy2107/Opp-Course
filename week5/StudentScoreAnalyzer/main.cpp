@@ -285,7 +285,7 @@ double x; // Biến để lưu trữ điểm cần tìm kiếm
         cout << "All students pass!" << endl;
     }
 
-    
+
     // So sánh điểm của hai sinh viên
     cout << endl;
     cout << "===== COMPARE ADJACENT STUDENTS ====="
@@ -300,3 +300,30 @@ double x; // Biến để lưu trữ điểm cần tìm kiếm
                  << i << endl;
         }
     }
+
+    // Tìm chuỗi sinh viên qua môn dài nhất
+     int currentStreak = 0;
+    int longestStreak = 0;
+
+    for (int i = 0; i < N; i++) {
+
+        if (scores[i] >= 5) {
+
+            currentStreak++;
+
+            if (currentStreak > longestStreak) { // Nếu chuỗi hiện tại dài hơn chuỗi dài nhất, cập nhật chuỗi dài nhất
+                longestStreak = currentStreak; // Cập nhật chuỗi dài nhất với giá trị của chuỗi hiện tại
+            }
+        }
+        else {
+            currentStreak = 0; // Reset chuỗi hiện tại nếu sinh viên không đạt
+        }
+    }
+
+    cout << endl;
+    cout << "===== LONGEST PASS STREAK ====="
+         << endl;
+
+    cout << "Longest pass streak: "
+         << longestStreak << " students"
+         << endl;
