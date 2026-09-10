@@ -165,6 +165,26 @@ cout << endl;
     }
     cout << "Students in range: " << rangeCount << endl;
 
+    // Tính điểm trung bình và liệt kê sinh viên có điểm trên trung bình
+ double sum = 0;
+
+    for (int i = 0; i < N; i++) {
+        sum += scores[i];
+    }
+
+    double average = sum / N;
+
+    cout << endl;
+    cout << "===== 3. ABOVE AVERAGE =====" << endl;
+    cout << "Average score: " << average << endl;
+
+    cout << "Students above average:" << endl;
+
+    for (int i = 0; i < N; i++) {
+        if (scores[i] > average) {
+            cout << "Student " << i + 1 << ": " << scores[i] << endl;
+        }
+    }
 
 
 
