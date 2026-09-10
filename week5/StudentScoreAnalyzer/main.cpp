@@ -215,5 +215,26 @@ cout << endl;
     }
 
 
-return 0;
-}
+    // Tìm kiếm điểm của sinh viên
+double x; // Biến để lưu trữ điểm cần tìm kiếm
+    bool found = false; // Biến để kiểm tra xem điểm có được tìm thấy hay không
+
+    cout << endl;
+    cout << "===== SEARCH FOR A SCORE =====" << endl;
+
+    cout << "Enter score to search: ";
+    cin >> x;
+
+    cout << "Found at:" << endl;
+
+    for (int i = 0; i < N; i++) {
+
+        if (scores[i] == x) {
+            cout << "Student " << i + 1 << endl;
+            found = true;
+        }
+    }
+
+    if (!found) {
+        cout << "Score not found." << endl;
+    }
