@@ -238,3 +238,21 @@ double x; // Biến để lưu trữ điểm cần tìm kiếm
     if (!found) {
         cout << "Score not found." << endl;
     }
+
+    // Tần suất xuất hiện của các điểm
+     int frequency = 0;
+
+    cout << endl;
+    cout << "===== SCORE FREQUENCY =====" << endl;
+
+    cout << "Enter score: ";
+    cin >> x;
+
+    for (int i = 0; i < N; i++) {
+
+        if (scores[i] == x) {
+            frequency = frequency + 1; // Tăng biến đếm tần suất xuất hiện của điểm x
+        }
+    }
+
+    cout << "Score " << x   << " appears " << frequency << " times." << endl;
