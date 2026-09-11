@@ -142,3 +142,24 @@ int main()
 
         cout << flowers[i].type << " : " << count << endl;
     }
+
+    // Task 8
+    cout << "\n===== Task 8 =====\n";
+
+    string searchType = "Rose";
+    bool foundType = false;
+
+    for (int i = 0; i < N; i++)
+    {
+        if (flowers[i].type == searchType)
+        {
+            cout << flowers[i].name << endl;
+            foundType = true;
+        }
+    }
+
+    if (!foundType)
+    {
+        cout << "No flower found." << endl;
+    }
+    
