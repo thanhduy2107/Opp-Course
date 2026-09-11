@@ -78,3 +78,25 @@ double findSecondHighest(double scores[], int n)
 
     return secondHighest;
 }
+
+// Task 5
+void searchScore(double scores[], int n, double x)
+{
+    bool found = false;
+
+    cout << "Found at:" << endl;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (scores[i] == x)
+        {
+            cout << "Student " << i + 1 << endl;
+            found = true;
+        }
+    }
+
+    if (!found)
+    {
+        cout << "Score not found!" << endl;
+    }
+}
