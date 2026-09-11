@@ -1,3 +1,4 @@
+// Step 1: Create a function to display the menu
 #include <iostream>
 using namespace std;
 
@@ -16,3 +17,4 @@ int main()
 
     return 0;
 }
+ 
