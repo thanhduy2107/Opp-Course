@@ -212,4 +212,20 @@ int main()
     {
         cout << "No, flower does not exist." << endl;
     }
-    
+
+    // Task 11
+    cout << "\n===== Task 11 =====\n";
+
+    int lowQuantityCount = 0;
+
+    for (int i = 0; i < N; i++)
+    {
+        if (flowers[i].quantity < 5)
+        {
+            lowQuantityCount++;
+        }
+    }
+
+    cout << "Flowers with quantity < 5: "
+         << lowQuantityCount << endl;
+         
