@@ -91,3 +91,14 @@ int main()
          << flowers[largestIndex].name
          << " (" << flowers[largestIndex].quantity << ")" << endl;
 
+// Task 5
+    cout << "\n===== Task 5 =====\n";
+
+    int totalQuantity = 0;
+
+    for (int i = 0; i < N; i++)
+    {
+        totalQuantity += flowers[i].quantity;
+    }
+
+    cout << "Total quantity: " << totalQuantity << endl;
