@@ -228,4 +228,23 @@ int main()
 
     cout << "Flowers with quantity < 5: "
          << lowQuantityCount << endl;
+
+    // Task 12
+    cout << "\n===== Task 12 =====\n";
+
+    double minPrice = 8.0;
+    double maxPrice = 12.0;
+
+    int priceRangeCount = 0;
+
+    for (int i = 0; i < N; i++)
+    {
+        if (flowers[i].price >= minPrice && flowers[i].price <= maxPrice)
+        {
+            priceRangeCount++;
+        }
+    }
+
+    cout << "Flowers from " << minPrice << " to " << maxPrice << ": "
+         << priceRangeCount << endl;
          
