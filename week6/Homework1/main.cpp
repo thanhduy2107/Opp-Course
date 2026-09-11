@@ -31,3 +31,28 @@ int countInRange(double scores[], int n, double a, double b)
 
     return count;
 }
+
+// Task 3
+void showAboveAverage(double scores[], int n)
+{
+    double sum = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        sum += scores[i];
+    }
+
+    double average = sum / n;
+
+    cout << "Average score: " << average << endl;
+    cout << endl;
+    cout << "Students above average:" << endl;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (scores[i] > average)
+        {
+            cout << "Student " << i + 1 << ": " << scores[i] << endl;
+        }
+    }
+}
