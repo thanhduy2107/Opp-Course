@@ -259,4 +259,31 @@ int main()
     }
 
     cout << "Total value: " << totalValue << endl;
-    
+
+     // Task 14
+    cout << "\n===== Task 14 =====\n";
+
+    int valuableIndex = 0;
+
+    for (int i = 1; i < N; i++)
+    {
+        double currentValue =
+            flowers[i].price * flowers[i].quantity;
+
+        double maxValue =
+            flowers[valuableIndex].price *
+            flowers[valuableIndex].quantity;
+
+        if (currentValue > maxValue)
+        {
+            valuableIndex = i;
+        }
+    }
+
+    cout << "Most valuable flower: "
+         << flowers[valuableIndex].name << endl;
+
+    cout << "Value: "
+         << flowers[valuableIndex].price *
+            flowers[valuableIndex].quantity << endl;
+
