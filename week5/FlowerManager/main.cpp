@@ -56,3 +56,20 @@ int main()
     cout << "Most expensive: "
          << flowers[maxIndex].name
          << " (" << flowers[maxIndex].price << ")" << endl;
+
+    // Task 3
+    cout << "\n===== TASK 3 =====\n";
+
+    int minIndex = 0;
+
+    for (int i = 1; i < N; i++)
+    {
+        if (flowers[i].price < flowers[minIndex].price)
+        {
+            minIndex = i;
+        }
+    }
+
+    cout << "Cheapest: "
+         << flowers[minIndex].name
+         << " (" << flowers[minIndex].price << ")" << endl;
