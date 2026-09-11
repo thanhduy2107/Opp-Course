@@ -188,4 +188,28 @@ int main()
     {
         cout << "Flower not found!" << endl;
     }
+
+    // Task 10
+    cout << "\n===== Task 10 =====\n";
+
+    string checkName = "Lily";
+    bool exists = false;
+
+    for (int i = 0; i < N; i++)
+    {
+        if (flowers[i].name == checkName)
+        {
+            exists = true;
+            break;
+        }
+    }
+
+    if (exists)
+    {
+        cout << "Yes, flower exists." << endl;
+    }
+    else
+    {
+        cout << "No, flower does not exist." << endl;
+    }
     
