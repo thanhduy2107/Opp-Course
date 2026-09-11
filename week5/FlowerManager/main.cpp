@@ -73,3 +73,21 @@ int main()
     cout << "Cheapest: "
          << flowers[minIndex].name
          << " (" << flowers[minIndex].price << ")" << endl;
+     
+  // Task 4
+    cout << "\n===== Task 4 =====\n";
+
+    int largestIndex = 0;
+
+    for (int i = 1; i < N; i++)
+    {
+        if (flowers[i].quantity > flowers[largestIndex].quantity)
+        {
+            largestIndex = i;
+        }
+    }
+
+    cout << "Largest quantity: "
+         << flowers[largestIndex].name
+         << " (" << flowers[largestIndex].quantity << ")" << endl;
+
