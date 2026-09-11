@@ -56,3 +56,25 @@ void showAboveAverage(double scores[], int n)
         }
     }
 }
+
+// Task 4
+double findSecondHighest(double scores[], int n)
+{
+    double highest = scores[0];
+    double secondHighest = scores[0];
+
+    for (int i = 1; i < n; i++)
+    {
+        if (scores[i] > highest)
+        {
+            secondHighest = highest;
+            highest = scores[i];
+        }
+        else if (scores[i] > secondHighest && scores[i] < highest)
+        {
+            secondHighest = scores[i];
+        }
+    }
+
+    return secondHighest;
+}
