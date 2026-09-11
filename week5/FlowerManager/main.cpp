@@ -40,4 +40,19 @@ int main()
     }
 
 
-    
+    // Task 2
+    cout << "\n===== TASK 2 =====\n";
+
+    int maxIndex = 0;
+
+    for (int i = 1; i < N; i++)
+    {
+        if (flowers[i].price > flowers[maxIndex].price)
+        {
+            maxIndex = i;
+        }
+    }
+
+    cout << "Most expensive: "
+         << flowers[maxIndex].name
+         << " (" << flowers[maxIndex].price << ")" << endl;
