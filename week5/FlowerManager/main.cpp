@@ -247,4 +247,16 @@ int main()
 
     cout << "Flowers from " << minPrice << " to " << maxPrice << ": "
          << priceRangeCount << endl;
-         
+
+     // Task 13
+    cout << "\n===== Task 13 =====\n";
+
+    double totalValue = 0;
+
+    for (int i = 0; i < N; i++)
+    {
+        totalValue += flowers[i].price * flowers[i].quantity;
+    }
+
+    cout << "Total value: " << totalValue << endl;
+    
