@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <iomanip>
+#include <iomanip> // bao gồm thư viện iomanip để sử dụng setw và setprecision
 using namespace std;
 
 int main()
