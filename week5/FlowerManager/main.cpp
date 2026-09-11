@@ -162,4 +162,30 @@ int main()
     {
         cout << "No flower found." << endl;
     }
+   
+    // Task 9
+    cout << "\n===== Task 9 =====\n";
+
+    string searchName = "Tulip";
+    bool foundName = false;
+
+    for (int i = 0; i < N; i++)
+    {
+        if (flowers[i].name == searchName)
+        {
+            cout << "Found!" << endl;
+            cout << "Name: " << flowers[i].name << endl;
+            cout << "Price: " << flowers[i].price << endl;
+            cout << "Quantity: " << flowers[i].quantity << endl;
+            cout << "Type: " << flowers[i].type << endl;
+
+            foundName = true;
+            break;
+        }
+    }
+
+    if (!foundName)
+    {
+        cout << "Flower not found!" << endl;
+    }
     
