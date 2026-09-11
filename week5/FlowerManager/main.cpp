@@ -312,3 +312,24 @@ int main()
              << flowers[i].price << endl;
     }
 
+   // Task 16
+    cout << "\n===== Task 16 =====\n";
+
+    for (int i = 0; i < N - 1; i++)
+    {
+        for (int j = 0; j < N - i - 1; j++)
+        {
+            if (flowers[j].name > flowers[j + 1].name)
+            {
+                temp = flowers[j];
+                flowers[j] = flowers[j + 1];
+                flowers[j + 1] = temp;
+            }
+        }
+    }
+    
+    for (int i = 0; i < N; i++)
+    {
+        cout << flowers[i].name << endl;
+    }
+
