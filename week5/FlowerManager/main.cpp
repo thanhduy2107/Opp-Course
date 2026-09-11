@@ -102,3 +102,18 @@ int main()
     }
 
     cout << "Total quantity: " << totalQuantity << endl;
+
+// Task 6
+    cout << "\n===== Task 6 =====\n";
+
+    double totalPrice = 0;
+
+    for (int i = 0; i < N; i++)
+    {
+        totalPrice += flowers[i].price;
+    }
+
+    double averagePrice = totalPrice / N;
+
+    cout << "Average price: " << averagePrice << endl;
+    
