@@ -116,4 +116,29 @@ int main()
     double averagePrice = totalPrice / N;
 
     cout << "Average price: " << averagePrice << endl;
-    
+
+// Task 7
+    cout << "\n===== Task 7 =====\n";
+
+    bool counted[20] = {false};
+
+    for (int i = 0; i < N; i++)
+    {
+        if (counted[i])
+        {
+            continue;
+        }
+
+        int count = 1;
+
+        for (int j = i + 1; j < N; j++)
+        {
+            if (flowers[i].type == flowers[j].type)
+            {
+                count++;
+                counted[j] = true;
+            }
+        }
+
+        cout << flowers[i].type << " : " << count << endl;
+    }
