@@ -116,3 +116,19 @@ int countScoreFrequency(double scores[], int n, double x)
 
     return count;
 }
+
+// Task 7
+void findFirstFailing(double scores[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        if (scores[i] < 5)
+        {
+            cout << "First failing student:" << endl;
+            cout << "Student " << i + 1 << ": " << scores[i] << endl;
+            return;
+        }
+    }
+
+    cout << "All students pass!" << endl;
+}
