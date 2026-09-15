@@ -146,3 +146,29 @@ void compareAdjacent(double scores[], int n)
         }
     }
 }
+
+// Task 9
+int longestPassStreak(double scores[], int n)
+{
+    int currentStreak = 0;
+    int longestStreak = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (scores[i] >= 5)
+        {
+            currentStreak++;
+
+            if (currentStreak > longestStreak)
+            {
+                longestStreak = currentStreak;
+            }
+        }
+        else
+        {
+            currentStreak = 0;
+        }
+    }
+
+    return longestStreak;
+    
