@@ -100,3 +100,19 @@ void searchScore(double scores[], int n, double x)
         cout << "Score not found!" << endl;
     }
 }
+
+// Task 6
+int countScoreFrequency(double scores[], int n, double x)
+{
+    int count = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (scores[i] == x)
+        {
+            count++;
+        }
+    }
+
+    return count;
+}
