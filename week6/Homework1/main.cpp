@@ -132,3 +132,17 @@ void findFirstFailing(double scores[], int n)
 
     cout << "All students pass!" << endl;
 }
+
+// Task 8
+void compareAdjacent(double scores[], int n)
+{
+    for (int i = 1; i < n; i++)
+    {
+        if (scores[i] > scores[i - 1])
+        {
+            cout << "Student " << i + 1
+                 << " improved compared to Student "
+                 << i << endl;
+        }
+    }
+}
