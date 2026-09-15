@@ -61,7 +61,7 @@ void showAboveAverage(double scores[], int n)
 double findSecondHighest(double scores[], int n)
 {
     double highest = scores[0];
-    double secondHighest = scores[0];
+    double secondHighest = -1;
 
     for (int i = 1; i < n; i++)
     {
@@ -171,4 +171,5 @@ int longestPassStreak(double scores[], int n)
     }
 
     return longestStreak;
-    
+
+ 
