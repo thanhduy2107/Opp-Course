@@ -8,13 +8,11 @@ int main() {
     cout << a << endl;
     cout << r << endl;
 
-// Using 
+// Using a reference to modify a variable
     int x = 3;
-    int& y = x;
-
-    x = 7;
-    y = 2;
-
+    int& y = x; // y là reference của x, & là ký hiệu của reference
+    x = 7; // thay đổi x thông qua y
+    y = 2; 
     cout << x << " " << y << endl;
 
     return 0;
