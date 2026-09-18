@@ -11,11 +11,8 @@ void swapValues(int x, int y) {
 int main() {
     int a = 5;
     int b = 10;
-
     cout << "Before: a = " << a << ", b = " << b << endl;
-
     swapValues(a, b);
-
     cout << "After:  a = " << a << ", b = " << b << endl;
 
     return 0;
