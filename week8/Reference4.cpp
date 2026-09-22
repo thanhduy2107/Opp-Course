@@ -18,11 +18,11 @@ int main() {
     // Bài 3
     int b = 4;
     int c = 9;
-    int& refB = b;
-    int& refC = c;
-    int temp = refB;
-    refB = refC;
-    refC = temp;
+    int& refB = b; // refB là reference của b
+    int& refC = c; // refC là reference của c
+    int temp = refB; // temp là biến tạm để lưu giá trị của refB
+    refB = refC; // refB nhận giá trị của refC
+    refC = temp; // refC nhận giá trị của temp (giá trị ban đầu của refB)
     cout << b << " " << c << endl;
 
 
@@ -30,9 +30,9 @@ int main() {
     int d = 5;
     int copyD = d;  // Truyền giá trị: mô phỏng bằng biến copy
     copyD = 100;
-    cout << "After changeValue: " << d << endl;
+    cout << "After changeValue: " << d << endl; 
     // Reference
-    int& refD = d;
+    int& refD = d; // refD là reference của d
     refD = 200;
     cout << "After changeRef: " << d << endl;
 
