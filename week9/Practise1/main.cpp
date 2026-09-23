@@ -320,3 +320,32 @@ bool checkFoodQuantity(
     return false;
 }
 
+
+// ======================================================
+// 8. TÍNH TỔNG TIỀN CỦA ĐƠN HÀNG
+// ======================================================
+
+double calculateOrderTotal(
+    const Restaurant& restaurant,
+    const Order& order
+) {
+
+    double total = 0;
+
+    for (int i = 0; i < order.itemCount; i++) {
+
+        for (int j = 0; j < restaurant.foodCount; j++) {
+
+            if (restaurant.food[j].id ==
+                order.items[i].foodId) {
+
+                total += restaurant.food[j].price
+                       * order.items[i].quantity;
+
+                break;
+            }
+        }
+    }
+
+    return total;
+}
