@@ -211,3 +211,87 @@ void updateFood(Restaurant& restaurant) {
     cout << "Khong tim thay mon an!\n";
 }
 
+// ======================================================
+// 6. TẠO ĐƠN HÀNG MỚI
+// ======================================================
+
+void createOrder(Restaurant& restaurant) {
+
+    if (restaurant.orderCount >= MAX_ORDER) {
+        cout << "Danh sach don hang da day!\n";
+        return;
+    }
+
+    Order newOrder;
+
+    cout << "Nhap ma don hang: ";
+    cin >> newOrder.id;
+
+    for (int i = 0; i < restaurant.orderCount; i++) {
+
+        if (restaurant.orders[i].id == newOrder.id) {
+            cout << "Ma don hang da ton tai!\n";
+            return;
+        }
+    }
+
+    cin.ignore();
+
+    cout << "Nhap ten khach hang: ";
+    getline(cin, newOrder.customerName);
+
+    cout << "Nhap dia chi giao hang: ";
+    getline(cin, newOrder.address);
+
+    cout << "Nhap so luong mon trong don: ";
+    cin >> newOrder.itemCount;
+
+    if (newOrder.itemCount <= 0 || newOrder.itemCount > MAX_ITEM) { // Món quá 100 và dưới 0, trả về giá trị không hợp lệ
+
+        cout << "So luong mon khong hop le!\n";
+        return;
+    }
+
+    for (int i = 0; i < newOrder.itemCount; i++) {
+
+        cout << "\nMon thu " << i + 1 << endl;
+
+        cout << "Nhap ma mon: ";
+        cin >> newOrder.items[i].foodId;
+
+        bool found = false;
+
+        for (int j = 0; j < restaurant.foodCount; j++) {
+
+            if (restaurant.food[j].id ==
+                newOrder.items[i].foodId) {
+
+                found = true;
+
+                cout << "Ten mon: "
+                     << restaurant.food[j].name << endl;
+
+                cout << "So luong dat: ";
+                cin >> newOrder.items[i].quantity;
+
+                break;
+            }
+        }
+
+        if (!found) {
+
+            cout << "Mon an khong ton tai!\n";
+
+            i--;
+        }
+    }
+
+    newOrder.status = "Pending";
+
+    restaurant.orders[restaurant.orderCount] = newOrder;
+
+    restaurant.orderCount++;
+
+    cout << "Tao don hang thanh cong!\n";
+}
+
