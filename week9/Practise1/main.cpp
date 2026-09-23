@@ -403,3 +403,48 @@ void showOrders(const Restaurant& restaurant) {
     }
 }
 
+// ======================================================
+// 10. TÌM ĐƠN HÀNG THEO MÃ
+// ======================================================
+
+void findOrder(const Restaurant& restaurant) {
+
+    string id;
+
+    cout << "Nhap ma don hang can tim: ";
+    cin >> id;
+
+    for (int i = 0; i < restaurant.orderCount; i++) {
+
+        if (restaurant.orders[i].id == id) {
+
+            cout << "\nTim thay don hang!\n";
+
+            cout << "Ma don: "
+                 << restaurant.orders[i].id << endl;
+
+            cout << "Khach hang: "
+                 << restaurant.orders[i].customerName
+                 << endl;
+
+            cout << "Dia chi: "
+                 << restaurant.orders[i].address
+                 << endl;
+
+            cout << "Trang thai: "
+                 << restaurant.orders[i].status
+                 << endl;
+
+            cout << "Tong tien: "
+                 << calculateOrderTotal(
+                        restaurant,
+                        restaurant.orders[i]
+                    )
+                 << endl;
+
+            return;
+        }
+    }
+
+    cout << "Khong tim thay don hang!\n";
+}
