@@ -516,3 +516,217 @@ void updateOrderStatus(Restaurant& restaurant) {
 
     cout << "Khong tim thay don hang!\n";
 }
+
+
+// ======================================================
+// 12. THỐNG KÊ TỔNG DOANH THU CỦA ĐƠN ĐÃ HOÀN THÀNH
+// ======================================================
+
+void statisticRevenue(const Restaurant& restaurant) {
+
+    double totalRevenue = 0;
+
+    int completedOrders = 0;
+
+    for (int i = 0; i < restaurant.orderCount; i++) {
+
+        if (restaurant.orders[i].status ==
+            "Completed") {
+
+            totalRevenue += calculateOrderTotal(
+                restaurant,
+                restaurant.orders[i]
+            );
+
+            completedOrders++;
+        }
+    }
+
+    cout << "\n========== THONG KE DOANH THU ==========\n";
+
+    cout << "So don da hoan thanh: "
+         << completedOrders << endl;
+
+    cout << "Tong doanh thu: "
+         << totalRevenue << endl;
+}
+
+
+// ======================================================
+// HIỂN THỊ THÔNG TIN CỬA HÀNG
+// ======================================================
+
+void showRestaurantInfo(const Restaurant& restaurant) {
+
+    cout << "\n========== THONG TIN CUA HANG ==========\n";
+
+    cout << "Ten cua hang: "
+         << restaurant.name << endl;
+
+    cout << "Dia chi: "
+         << restaurant.address << endl;
+
+    cout << "So dien thoai: "
+         << restaurant.phone << endl;
+}
+
+
+// ======================================================
+// MAIN
+// ======================================================
+
+int main() {
+
+    Restaurant restaurant;
+
+    int choice;
+
+    do {
+
+        cout << "\n\n========================================\n";
+        cout << "       QUAN LY CUA HANG GIAO DO AN\n";
+        cout << "========================================\n";
+
+        cout << "1. Nhap thong tin cua hang\n";
+        cout << "2. Them mon an moi\n";
+        cout << "3. Hien thi danh sach mon an\n";
+        cout << "4. Tim mon an theo ma hoac ten\n";
+        cout << "5. Cap nhat gia hoac so luong mon an\n";
+        cout << "6. Tao don hang moi\n";
+        cout << "7. Kiem tra mon an va so luong\n";
+        cout << "8. Tinh tong tien cua don hang\n";
+        cout << "9. Hien thi danh sach don hang\n";
+        cout << "10. Tim don hang theo ma\n";
+        cout << "11. Cap nhat trang thai don hang\n";
+        cout << "12. Thong ke tong doanh thu\n";
+        cout << "13. Hien thi thong tin cua hang\n";
+        cout << "0. Thoat\n";
+
+        cout << "========================================\n";
+
+        cout << "Nhap lua chon: ";
+        cin >> choice;
+
+        switch (choice) {
+
+            case 1:
+                inputRestaurant(restaurant);
+                break;
+
+            case 2:
+                addFood(restaurant);
+                break;
+
+            case 3:
+                showFoods(restaurant);
+                break;
+
+            case 4:
+                findFood(restaurant);
+                break;
+
+            case 5:
+                updateFood(restaurant);
+                break;
+
+            case 6:
+                createOrder(restaurant);
+                break;
+
+            case 7:
+            {
+                string foodId;
+                int quantity;
+
+                cout << "Nhap ma mon: ";
+                cin >> foodId;
+
+                cout << "Nhap so luong can kiem tra: ";
+                cin >> quantity;
+
+                if (checkFoodQuantity(
+                        restaurant,
+                        foodId,
+                        quantity)) {
+
+                    cout << "Mon an ton tai va du so luong!\n";
+
+                } else {
+
+                    cout << "Mon an khong ton tai hoac khong du so luong!\n";
+                }
+
+                break;
+            }
+
+            case 8:
+            {
+                string orderId;
+
+                cout << "Nhap ma don hang: ";
+                cin >> orderId;
+
+                bool found = false;
+
+                for (int i = 0;
+                     i < restaurant.orderCount;
+                     i++) {
+
+                    if (restaurant.orders[i].id ==
+                        orderId) {
+
+                        double total =
+                            calculateOrderTotal(
+                                restaurant,
+                                restaurant.orders[i]
+                            );
+
+                        cout << "Tong tien don hang: "
+                             << total << endl;
+
+                        found = true;
+
+                        break;
+                    }
+                }
+
+                if (!found) {
+                    cout << "Khong tim thay don hang!\n";
+                }
+
+                break;
+            }
+
+            case 9:
+                showOrders(restaurant);
+                break;
+
+            case 10:
+                findOrder(restaurant);
+                break;
+
+            case 11:
+                updateOrderStatus(restaurant);
+                break;
+
+            case 12:
+                statisticRevenue(restaurant);
+                break;
+
+            case 13:
+                showRestaurantInfo(restaurant);
+                break;
+
+            case 0:
+                cout << "Ket thuc chuong trinh!\n";
+                break;
+
+            default:
+                cout << "Lua chon khong hop le!\n";
+        }
+
+    } while (choice != 0);
+
+    return 0;
+}
+
