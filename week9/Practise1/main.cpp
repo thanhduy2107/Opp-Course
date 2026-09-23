@@ -177,6 +177,37 @@ void findFood(const Restaurant& restaurant) {
     }
 
     if (!found) {
-        cout << "Khong tim thay mon an!\n";
+        cout << "Khong tim thay mon an!\n"; 
     }
 }
+
+// ======================================================
+// 5. CẬP NHẬT GIÁ HOẶC SỐ LƯỢNG MÓN ĂN
+// ======================================================
+
+void updateFood(Restaurant& restaurant) {
+
+    string id;
+
+    cout << "Nhap ma mon can cap nhat: ";
+    cin >> id;
+
+    for (int i = 0; i < restaurant.foodCount; i++) { 
+
+        if (restaurant.food[i].id == id) {
+
+            cout << "Nhap gia moi: ";
+            cin >> restaurant.food[i].price;
+
+            cout << "Nhap so luong moi: ";
+            cin >> restaurant.food[i].quantity;
+
+            cout << "Cap nhat thanh cong!\n";
+
+            return;
+        }
+    }
+
+    cout << "Khong tim thay mon an!\n";
+}
+
