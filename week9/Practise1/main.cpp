@@ -295,3 +295,27 @@ void createOrder(Restaurant& restaurant) {
     cout << "Tao don hang thanh cong!\n";
 }
 
+// ======================================================
+// 7. KIỂM TRA MÓN ĂN CÓ TỒN TẠI VÀ ĐỦ SỐ LƯỢNG
+// ======================================================
+
+bool checkFoodQuantity(
+    const Restaurant& restaurant,
+    string foodId,
+    int quantity
+) {
+
+    for (int i = 0; i < restaurant.foodCount; i++) {
+
+        if (restaurant.food[i].id == foodId) {
+
+            if (restaurant.food[i].quantity >= quantity) {
+                return true;
+            }
+
+            return false;
+        }
+    }
+
+    return false;
+}
