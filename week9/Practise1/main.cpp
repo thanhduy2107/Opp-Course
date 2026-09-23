@@ -138,3 +138,45 @@ void showFoods(const Restaurant& restaurant) {
     }
 }
 
+// ======================================================
+// 4. TÌM MÓN ĂN THEO MÃ HOẶC TÊN
+// ======================================================
+
+void findFood(const Restaurant& restaurant) {
+
+    string keyword;
+
+    cin.ignore();
+
+    cout << "Nhap ma hoac ten mon can tim: ";
+    getline(cin, keyword);
+
+    bool found = false;
+
+    for (int i = 0; i < restaurant.foodCount; i++) {
+
+        if (restaurant.food[i].id == keyword ||
+            restaurant.food[i].name == keyword) {
+
+            cout << "\nTim thay mon an:\n";
+
+            cout << "Ma mon: "
+                 << restaurant.food[i].id << endl;
+
+            cout << "Ten mon: "
+                 << restaurant.food[i].name << endl;
+
+            cout << "Don gia: "
+                 << restaurant.food[i].price << endl;
+
+            cout << "So luong: "
+                 << restaurant.food[i].quantity << endl;
+
+            found = true;
+        }
+    }
+
+    if (!found) {
+        cout << "Khong tim thay mon an!\n";
+    }
+}
