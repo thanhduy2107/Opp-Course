@@ -106,3 +106,35 @@ void addFood(Restaurant& restaurant) {
 
     cout << "Them mon an thanh cong!\n";
 }
+
+// ======================================================
+// 3. HIỂN THỊ DANH SÁCH MÓN ĂN
+// ======================================================
+
+void showFoods(const Restaurant& restaurant) {
+
+    if (restaurant.foodCount == 0) {
+        cout << "Chua co mon an nao!\n";
+        return;
+    }
+
+    cout << "\n========== DANH SACH MON AN ==========\n";
+
+    for (int i = 0; i < restaurant.foodCount; i++) {
+
+        cout << "\nMon " << i + 1 << endl;
+
+        cout << "Ma mon: "
+             << restaurant.food[i].id << endl;
+
+        cout << "Ten mon: "
+             << restaurant.food[i].name << endl;
+
+        cout << "Don gia: "
+             << restaurant.food[i].price << endl;
+
+        cout << "So luong: "
+             << restaurant.food[i].quantity << endl;
+    }
+}
+
