@@ -349,3 +349,57 @@ double calculateOrderTotal(
 
     return total;
 }
+
+// ======================================================
+// 9. HIỂN THỊ DANH SÁCH ĐƠN HÀNG
+// ======================================================
+
+void showOrders(const Restaurant& restaurant) {
+
+    if (restaurant.orderCount == 0) {
+
+        cout << "Chua co don hang nao!\n";
+
+        return;
+    }
+
+    cout << "\n========== DANH SACH DON HANG ==========\n";
+
+    for (int i = 0; i < restaurant.orderCount; i++) {
+
+        cout << "\nDon hang " << i + 1 << endl;
+
+        cout << "Ma don: "
+             << restaurant.orders[i].id << endl;
+
+        cout << "Khach hang: "
+             << restaurant.orders[i].customerName << endl;
+
+        cout << "Dia chi: "
+             << restaurant.orders[i].address << endl;
+
+        cout << "Trang thai: "
+             << restaurant.orders[i].status << endl;
+
+        cout << "Cac mon:\n";
+
+        for (int j = 0;
+             j < restaurant.orders[i].itemCount;
+             j++) {
+
+            cout << "- Ma mon: "
+                 << restaurant.orders[i].items[j].foodId
+                 << ", So luong: "
+                 << restaurant.orders[i].items[j].quantity
+                 << endl;
+        }
+
+        cout << "Tong tien: "
+             << calculateOrderTotal(
+                    restaurant,
+                    restaurant.orders[i]
+                )
+             << endl;
+    }
+}
+
