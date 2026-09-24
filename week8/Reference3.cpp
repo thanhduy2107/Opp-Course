@@ -13,7 +13,7 @@ int main() {
     int& y = x; // y là reference của x, & là ký hiệu của reference
     x = 7; // thay đổi x thông qua y
     y = 2; 
-    cout << x << " " << y << endl;
+    cout << x << " " << y << endl; 
 
     return 0;
 }
