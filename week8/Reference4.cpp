@@ -34,7 +34,7 @@ int main() {
     // Reference
     int& refD = d; // refD là reference của d
     refD = 200;
-    cout << "After changeRef: " << d << endl;
+    cout << "After changeRef: " << d << endl; 
 
     return 0;
 }

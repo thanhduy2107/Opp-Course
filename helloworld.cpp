@@ -5,7 +5,7 @@ using namespace std;
 // Khai báo struct Computer
 struct Computer {
     int id;
-    string model;
+    string model; 
     int ram;
     int year;
 };

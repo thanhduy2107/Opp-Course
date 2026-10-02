@@ -264,7 +264,7 @@ void task6() {
     string code;
     string newStatus;
 
-    cout << "\n===== TASK 6 =====\n";
+    cout << "\n===== TASK 6 =====\n"; 
 
     cout << "Nhap ma don hang: ";
     getline(cin, code);
