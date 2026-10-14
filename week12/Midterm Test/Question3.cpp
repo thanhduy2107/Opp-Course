@@ -108,7 +108,7 @@ public:
 
 // ===== Main =====
 int main() {
-    FishShop shop(1, "Duy's Fish Shop", "Thu Duc, HCMC", "Duy", "2020-01-01");
+    FishShop shop(1, "Duy's Fish Shop", "Thu Duc, HCMC", "Duy", "2026-09-10");
 
     // 4 categories
     Category cat1(1, "Freshwater", "Fish that live in rivers and lakes");
