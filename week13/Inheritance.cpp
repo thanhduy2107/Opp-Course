@@ -79,31 +79,44 @@ public:
     }
 };
 
-// 4. Sử dụng trong hàm main()
 int main() {
-    // Tạo đối tượng People (mặc định)
-    People p1;
-    cout << "--- People p1 (mặc định) ---" << endl;
+    // == 1. Tạo các đối tượng People ==
+    People p1; // mặc định
+    People p2("079123456789", "Nguyen Van A", "Ho Chi Minh"); // có tham số
+
+    // == 2. Tạo các đối tượng Student ==
+    Student s1; // mặc định
+    Student s2("079123456789", "Tran Thi B", "Ha Noi", "SV001", 2023); // có tham số
+
+    // == 3. Tạo các đối tượng FIEStudent ==
+    FIEStudent f1; // mặc định
+    FIEStudent f2("079987654321", "Le Minh C", "Da Nang", "FIE2023001", 2023, 120); // có tham số
+
+    // == 4. Hiển thị thông tin ==
+    cout << "---- Thong tin doi tuong p1 (People - mac dinh) ----" << endl;
     p1.displayInfo();
     cout << endl;
 
-    // Tạo đối tượng People (có tham số)
-    People p2("079123456789", "Nguyen Van A", "Ho Chi Minh");
-    cout << "--- People p2 (có tham số) ---" << endl;
+    cout << "---- Thong tin doi tuong p2 (People - co tham so) ----" << endl;
     p2.displayInfo();
     cout << endl;
 
-    // Tạo đối tượng Student (có tham số)
-    Student s1("079123456789", "Tran Thi B", "Ha Noi", "SV001", 2023);
-    cout << "--- Student s1 ---" << endl;
+    cout << "---- Thong tin doi tuong s1 (Student - mac dinh) ----" << endl;
     s1.displayInfo();
     cout << endl;
 
-    // Tạo đối tượng FIEStudent (có tham số)
-    FIEStudent f1("079987654321", "Le Minh C", "Da Nang", "FIE2023801", 2023, 120);
-    cout << "--- FIEStudent f1 ---" << endl;
+    cout << "---- Thong tin doi tuong s2 (Student - co tham so) ----" << endl;
+    s2.displayInfo();
+    cout << endl;
+
+    cout << "---- Thong tin doi tuong f1 (FIEStudent - mac dinh) ----" << endl;
     f1.displayInfo();
+    cout << endl;
+
+    cout << "---- Thong tin doi tuong f2 (FIEStudent - co tham so) ----" << endl;
+    f2.displayInfo();
     cout << endl;
 
     return 0;
 }
+
