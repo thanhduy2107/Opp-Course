@@ -30,7 +30,7 @@ public:
 
     virtual void solve() = 0; // phương thức thuần ảo
 
-    virtual ~PT() {}
+    virtual ~PT() {} // Destructor ảo để giải phóng bộ nhớ cho các lớp con
 };
 
 // PT BẬC 1
