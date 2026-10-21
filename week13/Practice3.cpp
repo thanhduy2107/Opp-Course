@@ -116,7 +116,6 @@ int main() {
     double avgLuong = tongLuong / (dsHourly.size() + dsMonthly.size());
     cout << "\n>>> Nhân viên có lương > trung bình (" << avgLuong << "):" << endl;
     cout << fixed << setprecision(2);
-    cout << "===================================" << endl;
     for (auto &h : dsHourly) if (h.tinhLuong() > avgLuong) h.displayInfo();
     for (auto &m : dsMonthly) if (m.tinhLuong() > avgLuong) m.displayInfo();
 
